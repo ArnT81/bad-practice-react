@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import Structure from './containers/Structure/Structure'
+import Instances from './containers/Instances/Instances'
+import ListWithStateOnTheList from './containers/ListWithStateOnTheList/ListWithStateOnTheList';
+import ListWithoutStateOnTheList from './containers/ListWithoutStateOnTheList/ListWithoutStateOnTheList';
+import Half from './components/Half/Half';
+import Container from './components/Container/Container';
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <header><h2>Worst Practice in React</h2></header>
+      <main>
+        {/* <Structure /> */}
+
+
+        {/* <Instances /> */}
+
+
+        {/*
+          You might not have to use state to update inputs anymore in React but if you want 
+          the inputs populated with previous values from a database it's still required.        
+          
+          Use the "Console" in the "developer tool" to see the difference in the following example
+        */}
+
+        <Container display='flex'>
+          <Half>
+            <ListWithStateOnTheList />
+          </Half>
+          <Half>
+            <ListWithoutStateOnTheList />
+          </Half>
+        </Container>
+      </main>
     </div>
   );
 }
-
-export default App;
